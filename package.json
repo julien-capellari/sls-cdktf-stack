@@ -1,0 +1,13 @@
+{
+  "name": "sls-cdktf-stack",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github.com:julien-capellari/sls-nest-api.git",
+  "author": "Julien Capellari <julien.capellari@neoxia.com>",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.3",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
