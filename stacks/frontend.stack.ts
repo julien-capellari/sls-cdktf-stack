@@ -12,6 +12,10 @@ export interface FrontendOpts {
 
 // Stack
 export class FrontendStack extends TerraformStack {
+  // Attributes
+  readonly url: TerraformOutput;
+
+  // Constructor
   constructor(scope: Construct, id: string, opts: FrontendOpts) {
     super(scope, id);
 
@@ -167,7 +171,7 @@ export class FrontendStack extends TerraformStack {
     });
 
     // Outputs
-    new TerraformOutput(this, 'frontend-origin', {
+    this.url = new TerraformOutput(this, 'frontend-origin', {
       value: `https://${distrib.domainName}`
     });
   }
