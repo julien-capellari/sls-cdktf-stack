@@ -10,6 +10,9 @@
     "backend",
     "frontend"
   ],
+  "scripts": {
+    "deploy": "cdktf deploy '*'"
+  },
   "engines": {
     "node": ">=14.0"
   },

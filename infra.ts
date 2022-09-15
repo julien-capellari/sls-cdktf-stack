@@ -7,15 +7,12 @@ import { BackendStack } from './stacks/backend.stack';
 const STAGE = 'dev';
 
 // Setup stacks
-(async () => {
-  const app = new App();
+const app = new App();
 
-  const frontend = new FrontendStack(app, 'frontend', { stage: STAGE });
+const frontend = new FrontendStack(app, 'frontend', { stage: STAGE });
+new BackendStack(app, 'backend', {
+  stage: STAGE,
+  frontendUrl: frontend.url.value,
+});
 
-  await BackendStack(app, 'backend', {
-    stage: STAGE,
-    frontendUrl: frontend.url.value,
-  });
-
-  app.synth();
-})();
+app.synth();

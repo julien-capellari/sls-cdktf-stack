@@ -158,7 +158,7 @@ export class FrontendStack extends TerraformStack {
             Action: ["s3:GetObject"],
             Resource: [`${bucket.arn}/*`],
             Principal: {
-              AWS: ["cloudfront.amazonaws.com"],
+              Service: ["cloudfront.amazonaws.com"],
             },
             Condition: {
               StringEquals: {
